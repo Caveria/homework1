@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .calculator {
+            padding: 25px;
+        }
+
+        .instructions h3 {
+            color: #4b6cb7;
+            margin-bottom: 10px;
+        }
+
+        .instructions ul {
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        #calculate-btn {
+            background-color: #4b6cb7;
+            color: white;
+        }
+
+        #reset-btn {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .results {
+            margin-top: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4b6cb7;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .summary-table {
+            margin-top: 40px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: white;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Calculator</h1>
+    </header>
+
+    <div class="calculator">
+        <div class="input-group">
+            <label for="num1">First Number (x):</label>
+            <input type="text" id="num1" placeholder="Enter a number">
+        </div>
+
+        <div class="input-group">
+            <label for="operator">Operator:</label>
+            <select id="operator">
+                <option value="+">Addition (+)</option>
+                <option value="-">Subtraction (-)</option>
+                <option value="*">Multiplication (*)</option>
+                <option value="/">Division (/)</option>
+                <option value="%">Modulus (%)</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="num2">Second Number (y):</label>
+            <input type="text" id="num2" placeholder="Enter a number">
+        </div>
+
+        <div class="buttons">
+            <button id="calculate-btn">Calculate</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+
+        <div class="results">
+            <h2>Calculation Results</h2>
+            <div id="results-table"></div>
+
+            <div class="summary-table" id="summary-table"></div>
+        </div>
+    </div>
+</div>
+<script src="calculator.js"></script>
+</body>
+</html>
